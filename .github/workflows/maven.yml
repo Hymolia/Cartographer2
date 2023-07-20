@@ -10,14 +10,18 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions: write-all
+    name: print-token
+    environment: dev
+    # needs: pre-pkr
 
     steps:
     - uses: actions/checkout@v3
